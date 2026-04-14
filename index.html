@@ -19,6 +19,21 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .nav-links a{text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);transition:color 0.15s}
 .nav-links a:hover{color:var(--ink)}
 .nav-cart{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);cursor:pointer;background:none;border:none;font-family:'Didact Gothic',sans-serif}
+.nav-right{display:flex;align-items:center;gap:20px}
+
+/* HAMBURGER */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:32px;height:32px}
+.hamburger span{display:block;width:22px;height:0.8px;background:var(--ink);transition:all 0.3s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(5.8px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(250,250,248,0.98);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transition:opacity 0.25s}
+.mobile-menu.open{display:flex;opacity:1}
+.mobile-menu a{text-decoration:none;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);padding:22px 0;border-bottom:0.5px solid var(--border);width:200px;text-align:center;transition:color 0.15s}
+.mobile-menu a:first-child{border-top:0.5px solid var(--border)}
+.mobile-menu a:hover{color:var(--ink)}
 
 /* HERO */
 .hero{position:relative;height:calc(100vh - 64px);min-height:560px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
@@ -134,25 +149,68 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
 .footer-social a:hover{color:var(--white)}
 .footer-copy{grid-column:1/-1;border-top:0.5px solid rgba(250,250,248,0.06);padding-top:24px;font-size:10px;color:rgba(250,250,248,0.16);letter-spacing:1.5px;text-align:center;text-transform:uppercase}
 
-/* RESPONSIVE */
+/* RESPONSIVE — tablet */
 @media(max-width:1024px){
-  nav{padding:0 28px}
+  nav{padding:0 24px}
   .nav-links{display:none}
+  .hamburger{display:flex}
   .hero{grid-template-columns:1fr;height:auto}
-  .hero-panel{height:64vw;min-height:320px}
+  .hero-panel{height:72vw;min-height:380px}
   .hero-panel.right{display:none}
-  .hero-text{bottom:32px;left:28px}
-  .shop-header{padding:52px 28px 0;flex-direction:column;align-items:flex-start;gap:4px}
-  .filter-bar{margin:20px 28px 0}
-  .shop-section{padding:40px 28px 80px}
+  .hero-text{bottom:36px;left:32px}
+  .shop-header{padding:52px 24px 0;flex-direction:column;align-items:flex-start;gap:4px}
+  .filter-bar{margin:20px 24px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .filter-bar::-webkit-scrollbar{display:none}
+  .filter-btn{white-space:nowrap;padding:14px 18px 14px 0}
+  .shop-section{padding:40px 24px 80px}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:2px}
-  .editorial-text{left:6%;max-width:300px}
+  .editorial{height:56vw;min-height:280px}
+  .editorial-overlay{background:linear-gradient(to bottom,rgba(26,23,20,0.45) 0%,rgba(26,23,20,0.2) 100%)}
+  .editorial-text{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;max-width:280px}
+  .editorial-link{margin:0 auto}
   .modal{grid-template-columns:1fr;max-height:95vh}
-  .modal-gallery{max-height:55vw;min-height:260px}
-  .email-section{padding:72px 28px}
+  .modal-gallery{max-height:52vw;min-height:240px}
+  .modal-content{padding:28px 24px}
+  .email-section{padding:72px 24px}
   .email-form{flex-direction:column}
   .email-form input{border-right:0.5px solid rgba(250,250,248,0.14);border-bottom:none}
-  footer{grid-template-columns:1fr;padding:48px 28px}
+  footer{grid-template-columns:1fr;padding:48px 24px}
+}
+
+/* RESPONSIVE — mobile */
+@media(max-width:480px){
+  nav{padding:0 20px;height:56px}
+  .mobile-menu{top:56px}
+  .announce{font-size:9px;letter-spacing:1.5px;padding:8px}
+  .hero-panel{height:88vw;min-height:300px}
+  .hero-text{bottom:28px;left:20px}
+  .hero-title{font-size:clamp(44px,12vw,64px);letter-spacing:4px;margin-bottom:20px}
+  .hero-kicker{font-size:8px;letter-spacing:3px;margin-bottom:10px}
+  .hero-cta{font-size:9px;letter-spacing:2px}
+  .shop-header{padding:40px 20px 0}
+  .filter-bar{margin:16px 20px 0}
+  .filter-btn{font-size:9px;letter-spacing:1px;padding:12px 14px 12px 0}
+  .shop-section{padding:32px 20px 64px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:1px}
+  .product-name{font-size:13px}
+  .product-sub{font-size:8px}
+  .product-price{font-size:12px}
+  .product-info{padding:12px 0 20px}
+  .editorial{height:70vw;min-height:240px}
+  .editorial-headline{font-size:clamp(28px,8vw,40px)}
+  .editorial-link{padding:10px 22px;font-size:9px}
+  .modal-overlay{padding:0}
+  .modal{max-height:100vh;border-radius:0}
+  .modal-gallery{max-height:56vw;min-height:220px}
+  .modal-content{padding:24px 20px;gap:14px}
+  .modal-title{font-size:22px}
+  .modal-price{font-size:20px}
+  .size-btn{width:42px;height:42px;font-size:10px}
+  .add-btn{padding:14px;font-size:9px;letter-spacing:2px}
+  .email-section{padding:56px 20px}
+  .email-section h2{letter-spacing:3px}
+  footer{padding:40px 20px}
+  .cart-notif{bottom:16px;right:16px;padding:12px 20px;font-size:9px}
 }
 </style>
 </head>
@@ -169,8 +227,20 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
     <span class="nav-logo-main">MA&Eacute;L</span>
     <span class="nav-logo-sub">Studio</span>
   </div>
-  <button class="nav-cart" id="cart-btn">Varukorg (0)</button>
+  <div class="nav-right">
+    <button class="nav-cart" id="cart-btn">Varukorg (0)</button>
+    <button class="hamburger" id="hamburger" aria-label="Meny" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#shop" onclick="closeMenu()">Shop</a>
+  <a href="#om" onclick="closeMenu()">Om MA&Eacute;L</a>
+  <a href="#" onclick="closeMenu()">Frakt &amp; Retur</a>
+  <a href="#" onclick="closeMenu()">Kontakt</a>
+</div>
 
 <section class="hero">
   <div class="hero-panel left">
@@ -470,7 +540,9 @@ function addToCart(){
   n.classList.add('show');
   setTimeout(()=>n.classList.remove('show'),2800);
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMenu();}});
+function toggleMenu(){const h=document.getElementById('hamburger');const m=document.getElementById('mobile-menu');h.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');document.body.style.overflow='';}
 buildGrid();
 </script>
 </body>
