@@ -18,19 +18,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .nav-links{display:flex;gap:36px;list-style:none}
 .nav-links a{text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);transition:color 0.15s}
 .nav-links a:hover{color:var(--ink)}
-.nav-cart{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);cursor:pointer;background:none;border:none;font-family:'Didact Gothic',sans-serif}
 .nav-right{display:flex;align-items:center;gap:20px}
-
-/* HAMBURGER */
+.nav-cart{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);cursor:pointer;background:none;border:none;font-family:'Didact Gothic',sans-serif}
 .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:4px;width:32px;height:32px}
 .hamburger span{display:block;width:22px;height:0.8px;background:var(--ink);transition:all 0.3s;transform-origin:center}
 .hamburger.open span:nth-child(1){transform:translateY(5.8px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .hamburger.open span:nth-child(3){transform:translateY(-5.8px) rotate(-45deg)}
-
-/* MOBILE MENU OVERLAY */
-.mobile-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(250,250,248,0.98);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:0;opacity:0;transition:opacity 0.25s}
-.mobile-menu.open{display:flex;opacity:1}
+.mobile-menu{display:none;position:fixed;inset:0;top:64px;background:rgba(250,250,248,0.98);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:0}
+.mobile-menu.open{display:flex}
 .mobile-menu a{text-decoration:none;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--mid);padding:22px 0;border-bottom:0.5px solid var(--border);width:200px;text-align:center;transition:color 0.15s}
 .mobile-menu a:first-child{border-top:0.5px solid var(--border)}
 .mobile-menu a:hover{color:var(--ink)}
@@ -59,7 +55,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .shop-header{padding:80px 56px 0;display:flex;align-items:flex-end;justify-content:space-between}
 .shop-heading{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);font-weight:300;letter-spacing:3px;color:var(--ink)}
 .shop-count{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin-bottom:5px}
-.filter-bar{display:flex;gap:0;border-bottom:0.5px solid var(--border);margin:24px 56px 0;padding-bottom:0}
+.filter-bar{display:flex;gap:0;border-bottom:0.5px solid var(--border);margin:24px 56px 0}
 .filter-btn{padding:14px 22px 14px 0;background:transparent;border:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);cursor:pointer;font-family:'Didact Gothic',sans-serif;position:relative;margin-right:8px;transition:color 0.15s}
 .filter-btn::after{content:'';position:absolute;bottom:-0.5px;left:0;width:0;height:1px;background:var(--ink);transition:width 0.25s}
 .filter-btn:hover{color:var(--ink)}
@@ -67,8 +63,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .filter-btn.active::after{width:calc(100% - 8px)}
 .shop-section{padding:48px 56px 120px}
 .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;max-width:1400px;margin:0 auto}
-
-/* PRODUCT CARDS */
 .product-card{cursor:pointer;opacity:0;animation:appear 0.4s ease forwards}
 @keyframes appear{from{opacity:0}to{opacity:1}}
 .product-img-wrap{position:relative;overflow:hidden;background:var(--off);aspect-ratio:3/4}
@@ -93,7 +87,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .editorial-link{display:inline-flex;align-items:center;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--white);text-decoration:none;border:0.5px solid rgba(250,250,248,0.35);padding:12px 28px;transition:all 0.2s}
 .editorial-link:hover{background:var(--white);color:var(--ink);border-color:var(--white)}
 
-/* MODAL */
+/* PRODUCT MODAL */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(26,23,20,0.72);backdrop-filter:blur(8px);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--white);max-width:1000px;width:100%;display:grid;grid-template-columns:1.1fr 1fr;max-height:94vh;position:relative;overflow:hidden}
@@ -106,25 +100,55 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.96);backdrop
 .thumb{width:54px;height:54px;flex-shrink:0;cursor:pointer;overflow:hidden;border:1px solid transparent;transition:border-color 0.15s}
 .thumb.active{border-color:var(--ink)}
 .thumb img{width:100%;height:100%;object-fit:cover}
-.modal-content{padding:44px 40px;overflow-y:auto;display:flex;flex-direction:column;gap:18px}
+.modal-content{padding:36px 36px 28px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
 .modal-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:17px;color:var(--ink);cursor:pointer;z-index:10;opacity:0.35;transition:opacity 0.15s;font-family:'Didact Gothic',sans-serif}
 .modal-close:hover{opacity:1}
 .modal-badge{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
-.modal-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;letter-spacing:0.5px;color:var(--ink);line-height:1.2}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;letter-spacing:0.5px;color:var(--ink);line-height:1.2}
 .modal-price{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--warm)}
 .modal-desc{font-size:12px;color:var(--mid);line-height:1.9}
-.modal-rule{height:0.5px;background:var(--border)}
-.size-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid);margin-bottom:10px}
+.modal-rule{height:0.5px;background:var(--border);flex-shrink:0}
+
+/* Color swatches */
+.color-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.color-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
+.color-selected-name{font-size:10px;color:var(--ink)}
+.swatches{display:flex;gap:6px;flex-wrap:wrap}
+.swatch{width:22px;height:22px;border-radius:50%;cursor:pointer;border:1.5px solid transparent;transition:all 0.15s;flex-shrink:0}
+.swatch:hover{transform:scale(1.15)}
+.swatch.active{border-color:var(--ink);transform:scale(1.15)}
+
+/* Size guide link */
+.size-guide-link{font-size:10px;letter-spacing:1px;color:var(--warm);cursor:pointer;background:none;border:none;font-family:'Didact Gothic',sans-serif;text-decoration:underline;text-underline-offset:3px;padding:0;margin-top:2px;text-align:left}
+
+.size-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.size-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--mid)}
 .sizes{display:flex;gap:4px;flex-wrap:wrap}
 .size-btn{width:46px;height:46px;border:0.5px solid var(--border);background:transparent;font-size:11px;cursor:pointer;font-family:'Didact Gothic',sans-serif;transition:all 0.15s;color:var(--ink);display:flex;align-items:center;justify-content:center}
 .size-btn:hover,.size-btn.selected{background:var(--ink);color:var(--white);border-color:var(--ink)}
 .info-row{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--mid)}
 .info-dot{width:3px;height:3px;border-radius:50%;background:var(--accent);flex-shrink:0}
-.add-btn{padding:16px;background:var(--ink);color:var(--white);border:none;font-family:'Didact Gothic',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+.add-btn{padding:16px;background:var(--ink);color:var(--white);border:none;font-family:'Didact Gothic',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;flex-shrink:0}
 .add-btn:hover{background:var(--warm)}
 .modal-spu{font-size:9px;color:var(--mid);opacity:0.28}
-.cart-notif{position:fixed;bottom:28px;right:28px;background:var(--ink);color:var(--white);padding:14px 28px;font-size:10px;letter-spacing:2px;text-transform:uppercase;transform:translateY(100px);transition:transform 0.3s;z-index:2000;display:none}
-.cart-notif.show{display:block;transform:translateY(0)}
+
+/* SIZE GUIDE MODAL */
+.sg-overlay{display:none;position:fixed;inset:0;background:rgba(26,23,20,0.6);z-index:1100;align-items:center;justify-content:center;padding:24px}
+.sg-overlay.open{display:flex}
+.sg-modal{background:var(--white);max-width:580px;width:100%;max-height:85vh;overflow-y:auto;position:relative;padding:40px}
+.sg-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:17px;color:var(--ink);cursor:pointer;opacity:0.35;transition:opacity 0.15s}
+.sg-close:hover{opacity:1}
+.sg-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:2px;color:var(--ink);margin-bottom:6px}
+.sg-sub{font-size:11px;color:var(--mid);line-height:1.7;margin-bottom:24px}
+.sg-note{font-size:11px;color:var(--warm);background:rgba(184,155,122,0.08);border-left:2px solid var(--accent);padding:10px 14px;margin-bottom:20px;line-height:1.7}
+.sg-table{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:20px}
+.sg-table th{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);padding:10px 12px;border-bottom:0.5px solid var(--border);text-align:left;font-weight:400}
+.sg-table td{padding:10px 12px;border-bottom:0.5px solid var(--border);color:var(--ink)}
+.sg-table tr:last-child td{border-bottom:none}
+.sg-table tr:hover td{background:var(--off)}
+.sg-measure-title{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--mid);margin:20px 0 10px}
+.sg-measure-img{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.sg-measure-list{font-size:11px;color:var(--mid);line-height:2}
 
 /* EMAIL */
 .email-section{background:var(--ink);padding:96px 56px;text-align:center}
@@ -149,7 +173,10 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
 .footer-social a:hover{color:var(--white)}
 .footer-copy{grid-column:1/-1;border-top:0.5px solid rgba(250,250,248,0.06);padding-top:24px;font-size:10px;color:rgba(250,250,248,0.16);letter-spacing:1.5px;text-align:center;text-transform:uppercase}
 
-/* RESPONSIVE — tablet */
+.cart-notif{position:fixed;bottom:28px;right:28px;background:var(--ink);color:var(--white);padding:14px 28px;font-size:10px;letter-spacing:2px;text-transform:uppercase;transform:translateY(100px);transition:transform 0.3s;z-index:2000;display:none}
+.cart-notif.show{display:block;transform:translateY(0)}
+
+/* RESPONSIVE tablet */
 @media(max-width:1024px){
   nav{padding:0 24px}
   .nav-links{display:none}
@@ -161,23 +188,22 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
   .shop-header{padding:52px 24px 0;flex-direction:column;align-items:flex-start;gap:4px}
   .filter-bar{margin:20px 24px 0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .filter-bar::-webkit-scrollbar{display:none}
-  .filter-btn{white-space:nowrap;padding:14px 18px 14px 0}
+  .filter-btn{white-space:nowrap}
   .shop-section{padding:40px 24px 80px}
   .product-grid{grid-template-columns:repeat(2,1fr);gap:2px}
   .editorial{height:56vw;min-height:280px}
-  .editorial-overlay{background:linear-gradient(to bottom,rgba(26,23,20,0.45) 0%,rgba(26,23,20,0.2) 100%)}
+  .editorial-overlay{background:linear-gradient(to bottom,rgba(26,23,20,0.45),rgba(26,23,20,0.2))}
   .editorial-text{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;max-width:280px}
-  .editorial-link{margin:0 auto}
   .modal{grid-template-columns:1fr;max-height:95vh}
   .modal-gallery{max-height:52vw;min-height:240px}
-  .modal-content{padding:28px 24px}
+  .modal-content{padding:24px 24px 20px}
   .email-section{padding:72px 24px}
   .email-form{flex-direction:column}
   .email-form input{border-right:0.5px solid rgba(250,250,248,0.14);border-bottom:none}
   footer{grid-template-columns:1fr;padding:48px 24px}
+  .sg-modal{padding:28px 24px}
 }
-
-/* RESPONSIVE — mobile */
+/* RESPONSIVE mobile */
 @media(max-width:480px){
   nav{padding:0 20px;height:56px}
   .mobile-menu{top:56px}
@@ -185,7 +211,6 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
   .hero-panel{height:88vw;min-height:300px}
   .hero-text{bottom:28px;left:20px}
   .hero-title{font-size:clamp(44px,12vw,64px);letter-spacing:4px;margin-bottom:20px}
-  .hero-kicker{font-size:8px;letter-spacing:3px;margin-bottom:10px}
   .hero-cta{font-size:9px;letter-spacing:2px}
   .shop-header{padding:40px 20px 0}
   .filter-bar{margin:16px 20px 0}
@@ -194,21 +219,17 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
   .product-grid{grid-template-columns:repeat(2,1fr);gap:1px}
   .product-name{font-size:13px}
   .product-sub{font-size:8px}
-  .product-price{font-size:12px}
   .product-info{padding:12px 0 20px}
   .editorial{height:70vw;min-height:240px}
   .editorial-headline{font-size:clamp(28px,8vw,40px)}
-  .editorial-link{padding:10px 22px;font-size:9px}
   .modal-overlay{padding:0}
-  .modal{max-height:100vh;border-radius:0}
+  .modal{max-height:100vh}
   .modal-gallery{max-height:56vw;min-height:220px}
-  .modal-content{padding:24px 20px;gap:14px}
-  .modal-title{font-size:22px}
-  .modal-price{font-size:20px}
-  .size-btn{width:42px;height:42px;font-size:10px}
-  .add-btn{padding:14px;font-size:9px;letter-spacing:2px}
-  .email-section{padding:56px 20px}
-  .email-section h2{letter-spacing:3px}
+  .modal-content{padding:20px 18px 16px;gap:12px}
+  .modal-title{font-size:20px}
+  .size-btn{width:42px;height:42px}
+  .add-btn{padding:14px;font-size:9px}
+  .sg-modal{padding:24px 18px;margin:0;max-height:100vh}
   footer{padding:40px 20px}
   .cart-notif{bottom:16px;right:16px;padding:12px 20px;font-size:9px}
 }
@@ -244,7 +265,7 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
 
 <section class="hero">
   <div class="hero-panel left">
-    <img src="https://cf.cjdropshipping.com/quick/product/31535800-ecb4-45b7-87b2-abc8e460b605.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200" alt="MA&Eacute;L Sommar 2026" onerror="this.style.background='#E4E0D8';this.style.display='none'">
+    <img src="https://cf.cjdropshipping.com/quick/product/31535800-ecb4-45b7-87b2-abc8e460b605.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200" alt="MA&Eacute;L Sommar 2026" onerror="this.style.display='none'">
     <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,23,20,0.52) 0%,rgba(26,23,20,0.1) 50%,transparent 100%)"></div>
     <div class="hero-text">
       <span class="hero-kicker">Sommarkollektion 2026</span>
@@ -253,7 +274,7 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
     </div>
   </div>
   <div class="hero-panel right">
-    <img src="https://cf.cjdropshipping.com/quick/product/8f23b76e-2708-4239-9e71-1c49ae2125ff.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200" alt="MA&Eacute;L" onerror="this.style.background='#2A2420';this.style.display='none'">
+    <img src="https://cf.cjdropshipping.com/quick/product/8f23b76e-2708-4239-9e71-1c49ae2125ff.jpg?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_1200,h_1200" alt="MA&Eacute;L" onerror="this.style.background='#2A2420'">
     <div class="hero-center-mark">
       <span class="hero-center-logo">MA&Eacute;L</span>
       <div class="hero-center-rule"></div>
@@ -291,6 +312,7 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
   </div>
 </div>
 
+<!-- PRODUCT MODAL -->
 <div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">&#x2715;</button>
@@ -305,24 +327,72 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
       <div class="modal-rule"></div>
       <p class="modal-desc" id="modal-desc"></p>
       <div class="modal-rule"></div>
-      <div>
-        <p class="size-label">V&auml;lj storlek</p>
-        <div class="sizes">
-          <button class="size-btn" onclick="selectSize(this)">XS</button>
-          <button class="size-btn" onclick="selectSize(this)">S</button>
-          <button class="size-btn selected" onclick="selectSize(this)">M</button>
-          <button class="size-btn" onclick="selectSize(this)">L</button>
-          <button class="size-btn" onclick="selectSize(this)">XL</button>
+
+      <!-- Color swatches -->
+      <div id="modal-colors-wrap">
+        <div class="color-label-row">
+          <span class="color-label">F&auml;rg</span>
+          <span class="color-selected-name" id="modal-color-name"></span>
         </div>
+        <div class="swatches" id="modal-swatches"></div>
       </div>
+
+      <!-- Size selector -->
+      <div>
+        <div class="size-label-row">
+          <span class="size-label">Storlek</span>
+          <button class="size-guide-link" onclick="openSizeGuide()">Storleksguide &rarr;</button>
+        </div>
+        <div class="sizes" id="modal-sizes"></div>
+      </div>
+
       <div style="display:flex;flex-direction:column;gap:9px">
         <div class="info-row"><span class="info-dot"></span>Leverans 5&ndash;10 arbetsdagar</div>
-        <div class="info-row"><span class="info-dot"></span>14 dagars fri retur</div>
+        <div class="info-row"><span class="info-dot"></span>14 dagars fri retur enligt distansavtalslagen</div>
         <div class="info-row"><span class="info-dot"></span>Klarna &amp; kortbetalning</div>
       </div>
       <button class="add-btn" onclick="addToCart()">L&auml;gg i varukorg</button>
       <p class="modal-spu" id="modal-spu"></p>
     </div>
+  </div>
+</div>
+
+<!-- SIZE GUIDE MODAL -->
+<div class="sg-overlay" id="sg-modal" onclick="closeSGOutside(event)">
+  <div class="sg-modal">
+    <button class="sg-close" onclick="closeSizeGuide()">&#x2715;</button>
+    <h2 class="sg-title">Storleksguide</h2>
+    <p class="sg-sub">M&aring;tten nedan &auml;r i centimeter och g&auml;ller f&ouml;r plaggets m&aring;tt (inte kroppen). Vi rekommenderar att j&auml;mf&ouml;ra med ett plagg du har hemma.</p>
+    <div class="sg-note">&#9888; V&aring;ra plagg f&ouml;ljer asiatisk storleks&auml;ttning och tenderar att vara sm&aring;. Vi rekommenderar att best&auml;lla <strong>en storlek upp</strong> fr&aring;n din vanliga storlek om du &auml;r os&auml;ker.</div>
+
+    <table class="sg-table">
+      <thead>
+        <tr>
+          <th>Storlek</th>
+          <th>EU-storlek</th>
+          <th>B&auml;st (cm)</th>
+          <th>Midja (cm)</th>
+          <th>H&ouml;ft (cm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>XS</td><td>34</td><td>76&ndash;80</td><td>60&ndash;64</td><td>84&ndash;88</td></tr>
+        <tr><td>S</td><td>36</td><td>80&ndash;84</td><td>64&ndash;68</td><td>88&ndash;92</td></tr>
+        <tr><td>M</td><td>38</td><td>84&ndash;88</td><td>68&ndash;72</td><td>92&ndash;96</td></tr>
+        <tr><td>L</td><td>40</td><td>88&ndash;94</td><td>72&ndash;78</td><td>96&ndash;102</td></tr>
+        <tr><td>XL</td><td>42</td><td>94&ndash;100</td><td>78&ndash;84</td><td>102&ndash;108</td></tr>
+      </tbody>
+    </table>
+
+    <p class="sg-measure-title">S&aring; m&auml;ter du r&auml;tt</p>
+    <div class="sg-measure-list">
+      <div>&#8594; <strong>B&auml;st:</strong> M&auml;t runt den bredaste delen av br&ouml;stet</div>
+      <div>&#8594; <strong>Midja:</strong> M&auml;t runt den smalaste delen av midjan</div>
+      <div>&#8594; <strong>H&ouml;ft:</strong> M&auml;t runt den bredaste delen av h&ouml;ften</div>
+    </div>
+
+    <p class="sg-measure-title">Kontakta oss</p>
+    <p style="font-size:11px;color:var(--mid);line-height:1.8">Hittar du inte din storlek eller &auml;r os&auml;ker? Kontakta oss p&aring; Instagram eller via v&aring;rt kontaktformul&auml;r s&aring; hj&auml;lper vi dig.</p>
   </div>
 </div>
 
@@ -365,115 +435,174 @@ footer{background:var(--ink);border-top:0.5px solid rgba(250,250,248,0.06);paddi
 const B='?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_800,h_800';
 const O='?x-oss-process=image/format,webp,image/resize,m_fill,m_pad,w_800,h_800';
 const q='https://cf.cjdropshipping.com/quick/product/';
-const c='https://cf.cjdropshipping.com/';
 const oss='https://oss-cf.cjdropshipping.com/';
+
+// Color palettes: {name, hex}
+const C={
+  svart:{name:'Svart',hex:'#1A1714'},
+  vit:{name:'Vit',hex:'#F5F2ED'},
+  beige:{name:'Beige',hex:'#D4B896'},
+  rosa:{name:'Rosa',hex:'#E8AABB'},
+  ljusblå:{name:'Ljusblå',hex:'#A8C4D8'},
+  grå:{name:'Grå',hex:'#9A9A9A'},
+  aprikot:{name:'Aprikot',hex:'#F0C4A0'},
+  mörkblå:{name:'Mörkblå',hex:'#2A3F5C'},
+  rött:{name:'Rött',hex:'#C43030'},
+  kaffe:{name:'Kaffe',hex:'#7A5C3A'},
+  kamelbrunt:{name:'Kamelbrunt',hex:'#C8945A'},
+  blå:{name:'Blå',hex:'#5A84A8'},
+  grön:{name:'Grön',hex:'#8AAA7A'},
+  champagne:{name:'Champagne',hex:'#E8D4A8'},
+  mörkgrön:{name:'Mörkgrön',hex:'#3A5A44'},
+  vinröd:{name:'Vinröd',hex:'#7A2A38'},
+  marinblå:{name:'Marinblå',hex:'#1E3050'},
+  gul:{name:'Gul',hex:'#E8C440'},
+  brun:{name:'Brun',hex:'#7A5040'},
+  blåvitrand:{name:'Blå/vit rand',hex:'linear-gradient(135deg,#5A84A8 50%,#F5F2ED 50%)'},
+  svartvitrand:{name:'Svart/vit rand',hex:'linear-gradient(135deg,#1A1714 50%,#F5F2ED 50%)'},
+};
 
 const PRODUCTS=[
   {
     spu:'CJCS2390831',cat:'set',badge:'Nyhet',badgeClass:'new',
     name:'Bow Lace Set',sub:'Matchande set · Spets & rosett',price:'449 kr',
-    desc:'Feminint matchande set med spetsdetaljer och rosett — topp och shorts i ett. Söt och stilren. Vit och ljusa toner.',
+    desc:'Feminint matchande set med spetsdetaljer och rosett — topp och shorts i ett. Söt och stilren.',
+    colors:[C.vit,C.aprikot,C.svart,C.mörkblå,C.rött,C.kaffe],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'8ab90ab7-974d-4f2d-81a4-30f97305b4e8.jpg'+B,q+'f415209c-f2a8-41c8-9806-03d01ee23baa.jpg'+B,q+'9b25feef-06ec-4ccc-910e-90f10cbceb1a.jpg'+B,q+'00f14e45-9d44-4bcb-bf2f-3d13296bc64b.jpg'+B,q+'feca6369-5770-4eb2-b7a0-af8b8f8aa0fa.jpg'+B]
   },
   {
     spu:'CJLS2002484',cat:'set',badge:'',badgeClass:'',
     name:'Tube Top & Pleated Skirt Set',sub:'Y2K · Matchande set',price:'499 kr',
-    desc:'Ärmlöst rörtopp med tillhörande plisserad kjol i Y2K-stil. Figurnära och feminin. Passar perfekt till sommarkväller.',
+    desc:'Ärmlöst rörtopp med tillhörande plisserad kjol i Y2K-stil. Figurnära och feminin.',
+    colors:[C.svart,C.vit,C.rosa,C.beige],
+    sizes:['S','M','L','XL'],
     imgs:[q+'1db7f7cb-a9be-4650-a41a-0e2a422fe798.jpg'+B,q+'843a3f80-c6cf-4c82-8fbe-034c812ed47c.jpg'+B,q+'cd3ce745-6912-436c-b276-aa17cdaa6175.jpg'+B,q+'cc4a291d-bf0c-4eca-91da-45e91c84737b.jpg'+B,q+'98ed631d-d4df-41b4-9ad6-9a22a22dc6d4.jpg'+B]
   },
   {
     spu:'CJLS1976696',cat:'set',badge:'',badgeClass:'',
     name:'Backless Halter Lace Vest Set',sub:'Ryggfri · Spets · Set',price:'529 kr',
-    desc:'Ryggfri haltervästkjol i plisserad spets med snörning. Elegant och feminin — perfekt för kvällar och event.',
+    desc:'Ryggfri haltervästkjol i plisserad spets med snörning. Elegant och feminin — perfekt för kvällar.',
+    colors:[C.svart,C.vit,C.beige],
+    sizes:['S','M','L','XL'],
     imgs:[q+'31535800-ecb4-45b7-87b2-abc8e460b605.jpg'+B,q+'bcd2d6e1-af45-4b97-a0e9-bec872f459e5.jpg'+B,q+'7afd4725-2ff2-4156-a749-73ac2988cea1.jpg'+B,q+'57799187-2a09-4a4d-ab78-e9150fbf2712.jpg'+B,q+'182408e5-4980-49dd-bba9-6d3104425df6.jpg'+B]
   },
   {
     spu:'CJYD2289681',cat:'set',badge:'Nyhet',badgeClass:'new',
     name:'Knit Jacquard Two-piece Set',sub:'Stickad · Långärmad · Set',price:'649 kr',
-    desc:'Vit stickad jacquard-set med långärmad topp och shorts. Texturrikt material med lyxig känsla. Minimalistisk estetik.',
+    desc:'Stickad jacquard-set med långärmad topp och shorts. Texturrikt material med lyxig känsla.',
+    colors:[C.vit,C.beige,C.svart],
+    sizes:['S','M','L','XL'],
     imgs:[q+'e71e8230-79d9-4f5f-8eb3-4ca2c7336552.jpg'+B,q+'f288f2e5-fde5-4112-8732-bb6909ff7843.jpg'+B,q+'b3ed38da-a6eb-4a88-84b2-a2dcf452d367.jpg'+B,q+'85316073-910b-4232-a2e1-cae7eeb5845b.jpg'+B,q+'a13737f8-b710-4215-90c1-b31812d5bbb2.jpg'+B]
   },
   {
     spu:'CJCS2423366',cat:'topp',badge:'Nyhet',badgeClass:'new',
     name:'Off-shoulder Pleated T-shirt',sub:'Off-shoulder · Kortärmad',price:'319 kr',
-    desc:'Somrig off-shoulder-topp med kortärmad plisserad midja. Figursmickrande snitt i mjukt material. Flera neutrala färger.',
-    imgs:[q+'ad85555b-ae77-4d72-90e6-4306bf14ccb9.jpg'+B,q+'6bdeb28a-d5f8-4abf-880f-cacc62e2a051.jpg'+B,q+'0ab61ceb-8931-4138-87ff-ac018190ab7a.jpg'+B,q+'e5465894-a9c9-4f81-8c8d-01d649ea1c00.jpg'+B,q+'e832d0f2-1465-421e-94d1-c0bb156b7ee5.jpg'+B]
+    desc:'Somrig off-shoulder-topp med plisserad midja. Figursmickrande snitt i mjukt material.',
+    colors:[C.grön,C.vit,C.svart,C.beige,C.rosa,C.ljusblå],
+    sizes:['S','M','L','XL'],
+    imgs:['gron_onesleeve.webp',q+'ad85555b-ae77-4d72-90e6-4306bf14ccb9.jpg'+B,q+'6bdeb28a-d5f8-4abf-880f-cacc62e2a051.jpg'+B,q+'0ab61ceb-8931-4138-87ff-ac018190ab7a.jpg'+B,q+'e5465894-a9c9-4f81-8c8d-01d649ea1c00.jpg'+B]
   },
   {
     spu:'CJCS2412201',cat:'topp',badge:'',badgeClass:'',
     name:'Crew Neck Long Sleeve Top',sub:'Rundhalsad · Långärmad',price:'279 kr',
-    desc:'Klassisk rundhalsad långärmad topp i mjukt material. Allsidig basplagg som passar till allt. Flera färger.',
+    desc:'Klassisk rundhalsad långärmad topp i mjukt material. Allsidig basplagg som passar till allt.',
+    colors:[C.svart,C.vit,C.beige,C.grå,C.rosa,C.ljusblå,C.brun],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'650fdf7c-8b8b-4442-9dce-ae39c2a2a75c.jpg'+B,q+'4141b6d5-f2ab-48d6-a3b4-49e5c7af188a.jpg'+B,q+'44235c4a-7948-49ee-b5ed-28db64e66a08.jpg'+B,q+'9428ad3d-52f4-4bf9-9c7b-59fc1dd5ad2e.jpg'+B,q+'2d6d9cbe-d9c6-4573-bac1-69342fe9d34d.jpg'+B]
   },
   {
     spu:'CJQB2261478',cat:'topp',badge:'',badgeClass:'',
     name:'V-neck Lace Trumpet Sleeve Top',sub:'V-ringad · Spets · Trumpetärm',price:'349 kr',
     desc:'Smal V-ringad spetstopp med långa trumpetärmar. Feminin och romantisk — perfekt till kjol eller jeans.',
+    colors:[C.svart,C.vit,C.beige],
+    sizes:['S','M','L','XL'],
     imgs:['https://cf.cjdropshipping.com/17362080/1876575486159884288.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488869404672.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575487606919168.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488001183744.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488445779968.jpg'+O]
   },
   {
     spu:'CJCS2367076',cat:'topp',badge:'Bästsäljare',badgeClass:'',
     name:'Pure Color Halter Top',sub:'Ryggfri · Backless',price:'279 kr',
-    desc:'Ryggfri halter-topp i rent, feminint snitt. Perfekt till sommarens kjolar och shorts. Svart, vit och beige.',
+    desc:'Ryggfri halter-topp i rent, feminint snitt. Perfekt till sommarens kjolar och shorts.',
+    colors:[C.svart,C.vit,C.beige,C.kamelbrunt],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'f62f4fed-08d6-41b4-ad82-9aa1e587b7d9.jpg'+B,q+'79e0a557-6766-4dfa-8e2d-da37b15c6347.jpg'+B,q+'b88b3f58-1ef0-4f9e-ac3b-d3adfd4abda3.jpg'+B,q+'95576f03-9c32-453c-a6fc-65eb50dc01dc.jpg'+B,q+'458cdec6-3adc-4b58-b052-f1ba54b0a11a.jpg'+B]
   },
   {
     spu:'CJYH2284609',cat:'topp',badge:'',badgeClass:'',
     name:'Batwing Sleeve Pullover Top',sub:'Fladdermusärm · Rund hals',price:'299 kr',
-    desc:'Trendig fladdermusärmad topp med rund hals. Avslappnad och feminin passform. Flera färger tillgängliga.',
+    desc:'Trendig fladdermusärmad topp med rund hals. Avslappnad och feminin passform.',
+    colors:[C.svart,C.vit,C.beige,C.blå,C.rosa,C.grön],
+    sizes:['S','M','L','XL'],
     imgs:[oss+'product/2025/03/10/09/2e9f5f3a-e5b6-4335-809d-babdbf2877da.jpg'+B,oss+'product/2025/03/10/09/1e0661f4-ad2e-43dc-a88f-b7d7c67f4ed6.jpg'+B,oss+'product/2025/03/10/09/bc48cc81-5f81-4da9-8c24-8e749c354816.jpg'+B,oss+'product/2025/02/06/07/6144cba7-9df7-431b-b2a3-8574b2128fee.jpg'+B,oss+'product/2025/03/10/09/c99c6355-2ea5-489b-a771-3163385c9206.jpg'+B]
   },
   {
     spu:'CJCS2165528',cat:'topp',badge:'',badgeClass:'',
     name:'Solid Color Knit Top',sub:'One-shoulder · Stickad',price:'349 kr',
     desc:'Mjuk stickad topp i off-shoulder-stil. Feminin och enkel att styla — passar till kjol, jeans eller shorts.',
+    colors:[C.grå,C.svart,C.beige,C.vit],
+    sizes:['S','M','L','XL'],
     imgs:[q+'5329d20c-a227-45b6-9fe6-159b3c752cf9.jpg'+B,q+'11eda20c-cf61-4a7a-9d65-362589b8cb03.jpg'+B,q+'5db9ae77-1c5b-410b-95fa-afb863b198a8.jpg'+B,q+'d2a8ee0e-2293-4657-837a-f2ac1e629120.jpg'+B,q+'860d26c5-59b6-4bb4-a12c-542336dde11a.jpg'+B]
   },
   {
     spu:'CJLY2300213',cat:'klanning',badge:'Nyhet',badgeClass:'new',
     name:'Tube Top Drawstring Backless Dress',sub:'Rörtopp · Ryggfri · Knytband',price:'549 kr',
-    desc:'Somrig ryggfri klänning med rörtopp och knytbandsdetalj. Feminin och figurnära. Perfekt för fest och varma kvällar.',
+    desc:'Somrig ryggfri klänning med rörtopp och knytbandsdetalj. Feminin och figurnära.',
+    colors:[C.svart,C.vit,C.rosa,C.blå,C.beige],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'78b4a6b0-93f1-42b7-bc1e-eacf807619e9.jpg'+B,q+'b997ef43-03cf-4fa8-9a7d-a493990c2f70.jpg'+B,q+'6e8752c5-62de-4856-b1ec-6622b673aaf9.jpg'+B,oss+'product/2025/02/26/03/e188dcf1-6a01-48dd-a685-66d07f0c581a.jpg'+B,oss+'product/2025/02/26/03/064ede1d-c200-40da-a997-3b898854a582.jpg'+B]
   },
   {
     spu:'CJYD2374824',cat:'klanning',badge:'',badgeClass:'',
     name:'Hollow Lace Striped Shirt Dress',sub:'Genombruten spets · Randig',price:'499 kr',
-    desc:'Luftig genombruten spetsskjorta i blå-vit randmönster. Solskyddande och stilren — perfekt som strandplagg eller dagsplagg.',
+    desc:'Luftig genombruten spetsskjorta i blå-vit randmönster. Solskyddande och stilren.',
+    colors:[C.blåvitrand,C.svartvitrand],
+    sizes:['S','M','L','XL'],
     imgs:[q+'0d3dd449-d234-4b02-babb-1b923a08ba5c.jpg'+B,q+'443826af-b522-47cf-8c65-c17b14e12c76.jpg'+B,q+'e251c586-2673-4ad4-addf-b703fd753806.jpg'+B,q+'3a3b5c9a-878f-4f5b-bcfd-9a30868f80ef.jpg'+B,q+'a8758d28-d9fa-4eef-9f1d-2ff32fd88517.jpg'+B]
   },
   {
     spu:'CJYD2363263',cat:'klanning',badge:'',badgeClass:'',
     name:'Silk Satin Slip Dress',sub:'Slip dress · Satin',price:'599 kr',
-    desc:'Lyxig slip dress i satinliknande material med justerbara axelband. Elegant och feminin — perfekt för sommarkvällar.',
+    desc:'Lyxig slip dress i satinliknande material med justerbara axelband. Elegant och feminin.',
+    colors:[C.svart,C.champagne,C.mörkgrön,C.vinröd,C.blå],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'af73abae-5a85-40ed-ac20-d36923343996.jpg'+B,q+'e3fb52f3-96be-4fde-896d-46706e352b7b.jpg'+B,q+'921539de-33fc-47fd-9e11-7c145a92cc64.jpg'+B,q+'7e7e375b-5809-4d35-be25-c2d8f802a192.jpg'+B,q+'c95a835c-10f6-49d4-a5b9-6933501919b7.jpg'+B]
   },
   {
     spu:'CJLY2391391',cat:'klanning',badge:'Nyhet',badgeClass:'new',
     name:'Diagonal Collar Pleated Dress',sub:'Sned urringning · Plisserad',price:'649 kr',
-    desc:'Sexig klänning med sned krage, plisserade detaljer och asymmetrisk kant. Modern och elegant. Flera enfärgade alternativ.',
+    desc:'Klänning med sned krage, plisserade detaljer och asymmetrisk kant. Modern och elegant.',
+    colors:[C.svart,C.vit,C.kamelbrunt,C.rosa,C.vinröd],
+    sizes:['S','M','L','XL'],
     imgs:[q+'8f23b76e-2708-4239-9e71-1c49ae2125ff.jpg'+B,q+'6eb7df92-a909-40d4-a954-d5fba997cfcf.jpg'+B,q+'429edd96-b39f-42e8-8c20-bbe0db90779d.jpg'+B,q+'dc6685f4-06db-440b-aaa1-8710595add78.jpg'+B,q+'e04f785f-caf3-46b7-ba20-7aea7dc8db2f.jpg'+B]
   },
   {
     spu:'CJLY2061360',cat:'klanning',badge:'Favorit',badgeClass:'',
     name:'Multi-layer Maxi Dress',sub:'Maxi · Romantisk · Flerskiktad',price:'899 kr',
-    desc:'Flytande maxi-klänning i flera lager med spaghettiband och ryggfri detalj. Marinblå och gul. Perfekt för semester.',
+    desc:'Flytande maxi-klänning i flera lager med spaghettiband och ryggfri detalj. Perfekt för semester.',
+    colors:[C.marinblå,C.gul],
+    sizes:['S','M','L','XL'],
     imgs:[q+'66dca41b-10aa-4b9b-b677-681f4bd8a675.jpg'+B,q+'17ba53bd-d35c-4da6-a945-c4f6ac5b2215.jpg'+B,q+'ab91df81-9973-4b59-8003-fb05772536fb.jpg'+B,q+'f6ea6703-67b3-42c9-90ce-d69e3a650a76.jpg'+B,q+'a723b702-4f4d-47fa-9235-d4895d12d5ec.jpg'+B]
   },
   {
     spu:'CJQZ2285588',cat:'kjol',badge:'Nyhet',badgeClass:'new',
     name:'High Waist Pleated Skirt',sub:'Högmidjad · Plisserad',price:'399 kr',
-    desc:'Figursmickrande högmidjad plisserad kjol i enfärgat material. Tidlös och mångsidig — bär med topp eller blus.',
+    desc:'Figursmickrande högmidjad plisserad kjol. Tidlös och mångsidig — bär med topp eller blus.',
+    colors:[C.svart,C.vit,C.beige,C.rosa,C.ljusblå,C.vinröd],
+    sizes:['XS','S','M','L','XL'],
     imgs:[q+'c3af8a6a-7816-47a4-a6eb-f41033268415.jpg'+B,q+'2cfefe9d-0404-4037-8de1-63393ee1a3f6.jpg'+B,q+'a63890a5-3279-4a2c-8efb-6afa9c49cdc4.jpg'+B,q+'2c45f657-c58e-456e-95b6-c62b56012bf2.jpg'+B,q+'997fe51c-7ea2-4489-b7d2-4af232924356.jpg'+B]
   },
   {
     spu:'CJQZ2055951',cat:'kjol',badge:'',badgeClass:'',
     name:'Sexy Lace Mini Skirt',sub:'Spets · Lågmidjad · Mini',price:'499 kr',
-    desc:'Lågmidjad spetskjol med feminin, parisisk känsla. Stilren och mångsidig — bär med vit topp eller bodysuit. Svart och vit.',
+    desc:'Lågmidjad spetskjol med feminin, parisisk känsla. Mångsidig — bär med vit topp eller bodysuit.',
+    colors:[C.svart,C.vit],
+    sizes:['XS','S','M','L'],
     imgs:[q+'4d918c16-8b79-46c3-8357-38b54e52c2ed.jpg'+B,q+'c626b948-01fc-44d1-a1cc-366849ee31eb.jpg'+B,q+'e3438fde-8468-4bae-8f09-bb9f0d75cc36.jpg'+B,q+'37da224d-2067-4ee7-907c-4196a742d2ac.jpg'+B]
   }
 ];
 
 let cartCount=0;
+let currentProduct=null;
 
 function buildGrid(filter='all'){
   const grid=document.getElementById('product-grid');
@@ -498,14 +627,56 @@ function filterProducts(cat,btn){
 }
 
 function openModal(p){
+  currentProduct=p;
   document.getElementById('modal-title').textContent=p.name;
   document.getElementById('modal-desc').textContent=p.desc;
   document.getElementById('modal-price').textContent=p.price;
   document.getElementById('modal-spu').textContent='SPU: '+p.spu;
   document.getElementById('modal-badge').textContent='MAÉL Studio · '+p.sub;
+
+  // Color swatches
+  const swatchWrap=document.getElementById('modal-swatches');
+  const colorName=document.getElementById('modal-color-name');
+  swatchWrap.innerHTML='';
+  if(p.colors&&p.colors.length>0){
+    document.getElementById('modal-colors-wrap').style.display='block';
+    colorName.textContent=p.colors[0].name;
+    p.colors.forEach((col,i)=>{
+      const s=document.createElement('div');
+      s.className='swatch'+(i===0?' active':'');
+      const isGradient=col.hex.startsWith('linear');
+      s.style.cssText=isGradient?`background:${col.hex};outline:${i===0?'2px solid var(--ink)':'none'};outline-offset:2px`:`background:${col.hex};outline:${i===0?'2px solid var(--ink)':'none'};outline-offset:2px`;
+      if(col.hex==='#F5F2ED')s.style.border='1px solid #D4D0C8';
+      s.title=col.name;
+      s.onclick=()=>{
+        document.querySelectorAll('.swatch').forEach(sw=>{sw.style.outline='none'});
+        s.style.outline='2px solid var(--ink)';
+        s.style.outlineOffset='2px';
+        colorName.textContent=col.name;
+        document.querySelectorAll('.swatch').forEach(sw=>sw.classList.remove('active'));
+        s.classList.add('active');
+      };
+      swatchWrap.appendChild(s);
+    });
+  } else {
+    document.getElementById('modal-colors-wrap').style.display='none';
+  }
+
+  // Sizes
+  const sizesEl=document.getElementById('modal-sizes');
+  sizesEl.innerHTML='';
+  p.sizes.forEach((s,i)=>{
+    const btn=document.createElement('button');
+    btn.className='size-btn'+(i===1?' selected':'');
+    btn.textContent=s;
+    btn.onclick=()=>selectSize(btn);
+    sizesEl.appendChild(btn);
+  });
+
   const mi=document.getElementById('modal-main-img');
   mi.src=p.imgs[0];
   mi.onerror=function(){this.parentElement.style.background='#E4E0D8'};
+
   const thumbs=document.getElementById('modal-thumbs');
   thumbs.innerHTML='';
   p.imgs.forEach((img,i)=>{
@@ -520,8 +691,7 @@ function openModal(p){
     };
     thumbs.appendChild(t);
   });
-  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('selected'));
-  document.querySelectorAll('.size-btn')[2].classList.add('selected');
+
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -532,6 +702,7 @@ function closeModal(){
 }
 function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal();}
 function selectSize(btn){document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');}
+
 function addToCart(){
   cartCount++;
   document.getElementById('cart-btn').textContent='Varukorg ('+cartCount+')';
@@ -540,9 +711,28 @@ function addToCart(){
   n.classList.add('show');
   setTimeout(()=>n.classList.remove('show'),2800);
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMenu();}});
-function toggleMenu(){const h=document.getElementById('hamburger');const m=document.getElementById('mobile-menu');h.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
-function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('mobile-menu').classList.remove('open');document.body.style.overflow='';}
+
+function openSizeGuide(){document.getElementById('sg-modal').classList.add('open');}
+function closeSizeGuide(){document.getElementById('sg-modal').classList.remove('open');}
+function closeSGOutside(e){if(e.target===document.getElementById('sg-modal'))closeSizeGuide();}
+
+function toggleMenu(){
+  const h=document.getElementById('hamburger');
+  const m=document.getElementById('mobile-menu');
+  h.classList.toggle('open');
+  m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeModal();closeSizeGuide();closeMenu();}
+});
+
 buildGrid();
 </script>
 </body>
