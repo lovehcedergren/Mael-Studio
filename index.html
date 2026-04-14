@@ -460,6 +460,7 @@ const C={
   brun:{name:'Brun',hex:'#7A5040'},
   blåvitrand:{name:'Blå/vit rand',hex:'linear-gradient(135deg,#5A84A8 50%,#F5F2ED 50%)'},
   svartvitrand:{name:'Svart/vit rand',hex:'linear-gradient(135deg,#1A1714 50%,#F5F2ED 50%)'},
+  lila:{name:'Lila',hex:'#7A5A8A'},
 };
 
 const PRODUCTS=[
@@ -467,7 +468,14 @@ const PRODUCTS=[
     spu:'CJCS2390831',cat:'set',badge:'Nyhet',badgeClass:'new',
     name:'Bow Lace Set',sub:'Matchande set · Spets & rosett',price:'449 kr',
     desc:'Feminint matchande set med spetsdetaljer och rosett — topp och shorts i ett. Söt och stilren.',
-    colors:[C.vit,C.aprikot,C.svart,C.mörkblå,C.rött,C.kaffe],
+    colors:[
+      {...C.vit,   img:q+'8ab90ab7-974d-4f2d-81a4-30f97305b4e8.jpg'+B},
+      {...C.aprikot,img:q+'0ffd89f3-d290-4849-a3cf-0be88b332fd1.jpg'+B},
+      {...C.svart, img:q+'226dc1af-e428-4a01-ad1d-565cc54d19f4.jpg'+B},
+      {...C.mörkblå,img:q+'bcd71d13-9e44-4898-9be9-58e10b6e5e1b.jpg'+B},
+      {...C.rött,  img:q+'e9c40840-621d-42e7-8c2b-5e317401daad.jpg'+B},
+      {...C.kaffe, img:q+'024ba6ed-35ea-4b2e-9825-393c86d1ea0d.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
     imgs:[q+'8ab90ab7-974d-4f2d-81a4-30f97305b4e8.jpg'+B,q+'f415209c-f2a8-41c8-9806-03d01ee23baa.jpg'+B,q+'9b25feef-06ec-4ccc-910e-90f10cbceb1a.jpg'+B,q+'00f14e45-9d44-4bcb-bf2f-3d13296bc64b.jpg'+B,q+'feca6369-5770-4eb2-b7a0-af8b8f8aa0fa.jpg'+B]
   },
@@ -475,23 +483,33 @@ const PRODUCTS=[
     spu:'CJLS2002484',cat:'set',badge:'',badgeClass:'',
     name:'Tube Top & Pleated Skirt Set',sub:'Y2K · Matchande set',price:'499 kr',
     desc:'Ärmlöst rörtopp med tillhörande plisserad kjol i Y2K-stil. Figurnära och feminin.',
-    colors:[C.svart,C.vit,C.rosa,C.beige],
+    colors:[
+      {...C.svart,img:q+'1db7f7cb-a9be-4650-a41a-0e2a422fe798.jpg'+B},
+      {...C.grå,  img:q+'cd3ce745-6912-436c-b276-aa17cdaa6175.jpg'+B},
+      {...C.grön, img:q+'cc4a291d-bf0c-4eca-91da-45e91c84737b.jpg'+B},
+      {...C.rosa, img:q+'98ed631d-d4df-41b4-9ad6-9a22a22dc6d4.jpg'+B},
+      {...C.rött, img:q+'52c1c249-244e-4e96-8795-7b0e7617347c.jpg'+B},
+      {...C.vit,  img:q+'4e37be90-c4c3-40c0-a74b-eab70e54b77d.jpg'+B},
+      {...C.gul,  img:q+'a5ec4191-63c9-4ec6-8b0d-59f4b32d6470.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
-    imgs:[q+'1db7f7cb-a9be-4650-a41a-0e2a422fe798.jpg'+B,q+'843a3f80-c6cf-4c82-8fbe-034c812ed47c.jpg'+B,q+'cd3ce745-6912-436c-b276-aa17cdaa6175.jpg'+B,q+'cc4a291d-bf0c-4eca-91da-45e91c84737b.jpg'+B,q+'98ed631d-d4df-41b4-9ad6-9a22a22dc6d4.jpg'+B]
+    imgs:[q+'1db7f7cb-a9be-4650-a41a-0e2a422fe798.jpg'+B,q+'cd3ce745-6912-436c-b276-aa17cdaa6175.jpg'+B,q+'cc4a291d-bf0c-4eca-91da-45e91c84737b.jpg'+B,q+'98ed631d-d4df-41b4-9ad6-9a22a22dc6d4.jpg'+B,q+'52c1c249-244e-4e96-8795-7b0e7617347c.jpg'+B]
   },
   {
-    spu:'CJLS1976696',cat:'set',badge:'',badgeClass:'',
-    name:'Backless Halter Lace Vest Set',sub:'Ryggfri · Spets · Set',price:'529 kr',
-    desc:'Ryggfri haltervästkjol i plisserad spets med snörning. Elegant och feminin — perfekt för kvällar.',
-    colors:[C.svart,C.vit,C.beige],
+    spu:'CJLS1976696',cat:'klanning',badge:'',badgeClass:'',
+    name:'Backless Halter Lace Dress',sub:'Ryggfri · Halter · Spets',price:'529 kr',
+    desc:'Flytande ryggfri halterklänning i plisserad spets. Elegant och feminin — perfekt för sommarkvällar och event.',
+    colors:[{name:'Milky White',hex:'#F5F0E8',img:q+'31535800-ecb4-45b7-87b2-abc8e460b605.jpg'+B}],
     sizes:['S','M','L','XL'],
-    imgs:[q+'31535800-ecb4-45b7-87b2-abc8e460b605.jpg'+B,q+'bcd2d6e1-af45-4b97-a0e9-bec872f459e5.jpg'+B,q+'7afd4725-2ff2-4156-a749-73ac2988cea1.jpg'+B,q+'57799187-2a09-4a4d-ab78-e9150fbf2712.jpg'+B,q+'182408e5-4980-49dd-bba9-6d3104425df6.jpg'+B]
+    imgs:[q+'31535800-ecb4-45b7-87b2-abc8e460b605.jpg'+B,q+'bcd2d6e1-af45-4b97-a0e9-bec872f459e5.jpg'+B,'ls1976696_1.png',q+'57799187-2a09-4a4d-ab78-e9150fbf2712.jpg'+B,'ls1976696_2.png','ls1976696_3.png']
   },
   {
     spu:'CJYD2289681',cat:'set',badge:'Nyhet',badgeClass:'new',
     name:'Knit Jacquard Two-piece Set',sub:'Stickad · Långärmad · Set',price:'649 kr',
     desc:'Stickad jacquard-set med långärmad topp och shorts. Texturrikt material med lyxig känsla.',
-    colors:[C.vit,C.beige,C.svart],
+    colors:[
+      {...C.vit,img:q+'e71e8230-79d9-4f5f-8eb3-4ca2c7336552.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:[q+'e71e8230-79d9-4f5f-8eb3-4ca2c7336552.jpg'+B,q+'f288f2e5-fde5-4112-8732-bb6909ff7843.jpg'+B,q+'b3ed38da-a6eb-4a88-84b2-a2dcf452d367.jpg'+B,q+'85316073-910b-4232-a2e1-cae7eeb5845b.jpg'+B,q+'a13737f8-b710-4215-90c1-b31812d5bbb2.jpg'+B]
   },
@@ -499,7 +517,11 @@ const PRODUCTS=[
     spu:'CJCS2423366',cat:'topp',badge:'Nyhet',badgeClass:'new',
     name:'Off-shoulder Pleated T-shirt',sub:'Off-shoulder · Kortärmad',price:'319 kr',
     desc:'Somrig off-shoulder-topp med plisserad midja. Figursmickrande snitt i mjukt material.',
-    colors:[C.grön,C.vit,C.svart,C.beige,C.rosa,C.ljusblå],
+    colors:[
+      {...C.grön,  img:'gron_onesleeve.webp'},
+      {...C.vit,   img:q+'ad85555b-ae77-4d72-90e6-4306bf14ccb9.jpg'+B},
+      {...C.svart, img:q+'e832d0f2-1465-421e-94d1-c0bb156b7ee5.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:['gron_onesleeve.webp',q+'ad85555b-ae77-4d72-90e6-4306bf14ccb9.jpg'+B,q+'6bdeb28a-d5f8-4abf-880f-cacc62e2a051.jpg'+B,q+'0ab61ceb-8931-4138-87ff-ac018190ab7a.jpg'+B,q+'e5465894-a9c9-4f81-8c8d-01d649ea1c00.jpg'+B]
   },
@@ -507,7 +529,12 @@ const PRODUCTS=[
     spu:'CJCS2412201',cat:'topp',badge:'',badgeClass:'',
     name:'Crew Neck Long Sleeve Top',sub:'Rundhalsad · Långärmad',price:'279 kr',
     desc:'Klassisk rundhalsad långärmad topp i mjukt material. Allsidig basplagg som passar till allt.',
-    colors:[C.svart,C.vit,C.beige,C.grå,C.rosa,C.ljusblå,C.brun],
+    colors:[
+      {...C.vit,     img:q+'650fdf7c-8b8b-4442-9dce-ae39c2a2a75c.jpg'+B},
+      {...C.svart,   img:q+'4141b6d5-f2ab-48d6-a3b4-49e5c7af188a.jpg'+B},
+      {...C.mörkblå, img:q+'44235c4a-7948-49ee-b5ed-28db64e66a08.jpg'+B},
+      {...C.rosa,    img:q+'61576ea5-66f9-401d-b16e-79fb0ffed822.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
     imgs:[q+'650fdf7c-8b8b-4442-9dce-ae39c2a2a75c.jpg'+B,q+'4141b6d5-f2ab-48d6-a3b4-49e5c7af188a.jpg'+B,q+'44235c4a-7948-49ee-b5ed-28db64e66a08.jpg'+B,q+'9428ad3d-52f4-4bf9-9c7b-59fc1dd5ad2e.jpg'+B,q+'2d6d9cbe-d9c6-4573-bac1-69342fe9d34d.jpg'+B]
   },
@@ -515,7 +542,10 @@ const PRODUCTS=[
     spu:'CJQB2261478',cat:'topp',badge:'',badgeClass:'',
     name:'V-neck Lace Trumpet Sleeve Top',sub:'V-ringad · Spets · Trumpetärm',price:'349 kr',
     desc:'Smal V-ringad spetstopp med långa trumpetärmar. Feminin och romantisk — perfekt till kjol eller jeans.',
-    colors:[C.svart,C.vit,C.beige],
+    colors:[
+      {...C.svart,img:'https://cf.cjdropshipping.com/88d08282-db5a-4336-80ff-7655cc4eb71d.jpg'+B},
+      {...C.vit,  img:'https://cf.cjdropshipping.com/d2379a0d-0b25-48e3-8e73-c7a1b4a41150.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:['https://cf.cjdropshipping.com/17362080/1876575486159884288.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488869404672.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575487606919168.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488001183744.jpg'+O,'https://cf.cjdropshipping.com/17362080/1876575488445779968.jpg'+O]
   },
@@ -523,7 +553,11 @@ const PRODUCTS=[
     spu:'CJCS2367076',cat:'topp',badge:'Bästsäljare',badgeClass:'',
     name:'Pure Color Halter Top',sub:'Ryggfri · Backless',price:'279 kr',
     desc:'Ryggfri halter-topp i rent, feminint snitt. Perfekt till sommarens kjolar och shorts.',
-    colors:[C.svart,C.vit,C.beige,C.kamelbrunt],
+    colors:[
+      {...C.svart,img:q+'4bc77e94-4d20-4a8e-acae-42b8183e41e2.jpg'+B},
+      {...C.blå,  img:q+'17459db2-2991-42bf-add0-ebc7444e285d.jpg'+B},
+      {...C.vit,  img:q+'7899d526-6626-4127-9377-0f9f71dada35.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
     imgs:[q+'f62f4fed-08d6-41b4-ad82-9aa1e587b7d9.jpg'+B,q+'79e0a557-6766-4dfa-8e2d-da37b15c6347.jpg'+B,q+'b88b3f58-1ef0-4f9e-ac3b-d3adfd4abda3.jpg'+B,q+'95576f03-9c32-453c-a6fc-65eb50dc01dc.jpg'+B,q+'458cdec6-3adc-4b58-b052-f1ba54b0a11a.jpg'+B]
   },
@@ -531,15 +565,22 @@ const PRODUCTS=[
     spu:'CJYH2284609',cat:'topp',badge:'',badgeClass:'',
     name:'Batwing Sleeve Pullover Top',sub:'Fladdermusärm · Rund hals',price:'299 kr',
     desc:'Trendig fladdermusärmad topp med rund hals. Avslappnad och feminin passform.',
-    colors:[C.svart,C.vit,C.beige,C.blå,C.rosa,C.grön],
+    colors:[
+      {...C.vit,  img:oss+'product/2025/03/10/09/14a35702-a309-4635-8eca-4539ffa9a6c3.jpg'+B},
+      {...C.beige,img:oss+'product/2025/02/06/07/6144cba7-9df7-431b-b2a3-8574b2128fee.jpg'+B},
+      {...C.brun, img:oss+'product/2025/03/10/09/1e0661f4-ad2e-43dc-a88f-b7d7c67f4ed6.jpg'+B},
+      {...C.svart,img:oss+'product/2025/03/10/09/3495d4a8-b66e-4f46-aa3b-7e2cabde2960.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
-    imgs:[oss+'product/2025/03/10/09/2e9f5f3a-e5b6-4335-809d-babdbf2877da.jpg'+B,oss+'product/2025/03/10/09/1e0661f4-ad2e-43dc-a88f-b7d7c67f4ed6.jpg'+B,oss+'product/2025/03/10/09/bc48cc81-5f81-4da9-8c24-8e749c354816.jpg'+B,oss+'product/2025/02/06/07/6144cba7-9df7-431b-b2a3-8574b2128fee.jpg'+B,oss+'product/2025/03/10/09/c99c6355-2ea5-489b-a771-3163385c9206.jpg'+B]
+    imgs:[oss+'product/2025/03/10/09/14a35702-a309-4635-8eca-4539ffa9a6c3.jpg'+B,oss+'product/2025/02/06/07/6144cba7-9df7-431b-b2a3-8574b2128fee.jpg'+B,oss+'product/2025/03/10/09/1e0661f4-ad2e-43dc-a88f-b7d7c67f4ed6.jpg'+B,oss+'product/2025/03/10/09/bc48cc81-5f81-4da9-8c24-8e749c354816.jpg'+B,oss+'product/2025/03/10/09/3495d4a8-b66e-4f46-aa3b-7e2cabde2960.jpg'+B]
   },
   {
     spu:'CJCS2165528',cat:'topp',badge:'',badgeClass:'',
     name:'Solid Color Knit Top',sub:'One-shoulder · Stickad',price:'349 kr',
     desc:'Mjuk stickad topp i off-shoulder-stil. Feminin och enkel att styla — passar till kjol, jeans eller shorts.',
-    colors:[C.grå,C.svart,C.beige,C.vit],
+    colors:[
+      {...C.grå,img:q+'07f07fdb-4b7a-4fa9-bc70-3efeda806882.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:[q+'5329d20c-a227-45b6-9fe6-159b3c752cf9.jpg'+B,q+'11eda20c-cf61-4a7a-9d65-362589b8cb03.jpg'+B,q+'5db9ae77-1c5b-410b-95fa-afb863b198a8.jpg'+B,q+'d2a8ee0e-2293-4657-837a-f2ac1e629120.jpg'+B,q+'860d26c5-59b6-4bb4-a12c-542336dde11a.jpg'+B]
   },
@@ -547,23 +588,31 @@ const PRODUCTS=[
     spu:'CJLY2300213',cat:'klanning',badge:'Nyhet',badgeClass:'new',
     name:'Tube Top Drawstring Backless Dress',sub:'Rörtopp · Ryggfri · Knytband',price:'549 kr',
     desc:'Somrig ryggfri klänning med rörtopp och knytbandsdetalj. Feminin och figurnära.',
-    colors:[C.svart,C.vit,C.rosa,C.blå,C.beige],
+    colors:[
+      {...C.champagne,img:oss+'product/2025/02/26/03/e188dcf1-6a01-48dd-a685-66d07f0c581a.jpg'+B},
+      {...C.mörkblå,  img:oss+'product/2025/02/26/03/f53d9c4f-f318-4253-ba31-67a7afbe51d3.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
-    imgs:[q+'78b4a6b0-93f1-42b7-bc1e-eacf807619e9.jpg'+B,q+'b997ef43-03cf-4fa8-9a7d-a493990c2f70.jpg'+B,q+'6e8752c5-62de-4856-b1ec-6622b673aaf9.jpg'+B,oss+'product/2025/02/26/03/e188dcf1-6a01-48dd-a685-66d07f0c581a.jpg'+B,oss+'product/2025/02/26/03/064ede1d-c200-40da-a997-3b898854a582.jpg'+B]
+    imgs:[q+'78b4a6b0-93f1-42b7-bc1e-eacf807619e9.jpg'+B,oss+'product/2025/02/26/03/e188dcf1-6a01-48dd-a685-66d07f0c581a.jpg'+B,oss+'product/2025/02/26/03/f53d9c4f-f318-4253-ba31-67a7afbe51d3.jpg'+B,q+'b997ef43-03cf-4fa8-9a7d-a493990c2f70.jpg'+B,oss+'product/2025/02/26/03/064ede1d-c200-40da-a997-3b898854a582.jpg'+B]
   },
   {
-    spu:'CJYD2374824',cat:'klanning',badge:'',badgeClass:'',
+    spu:'CJYD2374824',cat:'topp',badge:'',badgeClass:'',
     name:'Hollow Lace Striped Shirt Dress',sub:'Genombruten spets · Randig',price:'499 kr',
     desc:'Luftig genombruten spetsskjorta i blå-vit randmönster. Solskyddande och stilren.',
-    colors:[C.blåvitrand,C.svartvitrand],
+    colors:[
+      {...C.vit,img:q+'5699ab3d-ae13-42a0-9181-20301f8b9330.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:[q+'0d3dd449-d234-4b02-babb-1b923a08ba5c.jpg'+B,q+'443826af-b522-47cf-8c65-c17b14e12c76.jpg'+B,q+'e251c586-2673-4ad4-addf-b703fd753806.jpg'+B,q+'3a3b5c9a-878f-4f5b-bcfd-9a30868f80ef.jpg'+B,q+'a8758d28-d9fa-4eef-9f1d-2ff32fd88517.jpg'+B]
   },
   {
-    spu:'CJYD2363263',cat:'klanning',badge:'',badgeClass:'',
+    spu:'CJYD2363263',cat:'topp',badge:'',badgeClass:'',
     name:'Silk Satin Slip Dress',sub:'Slip dress · Satin',price:'599 kr',
     desc:'Lyxig slip dress i satinliknande material med justerbara axelband. Elegant och feminin.',
-    colors:[C.svart,C.champagne,C.mörkgrön,C.vinröd,C.blå],
+    colors:[
+      {...C.svart,img:q+'7e7e375b-5809-4d35-be25-c2d8f802a192.jpg'+B},
+      {...C.vit,  img:q+'aab11291-293b-4280-86f7-bc5889f909ab.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
     imgs:[q+'af73abae-5a85-40ed-ac20-d36923343996.jpg'+B,q+'e3fb52f3-96be-4fde-896d-46706e352b7b.jpg'+B,q+'921539de-33fc-47fd-9e11-7c145a92cc64.jpg'+B,q+'7e7e375b-5809-4d35-be25-c2d8f802a192.jpg'+B,q+'c95a835c-10f6-49d4-a5b9-6933501919b7.jpg'+B]
   },
@@ -571,7 +620,11 @@ const PRODUCTS=[
     spu:'CJLY2391391',cat:'klanning',badge:'Nyhet',badgeClass:'new',
     name:'Diagonal Collar Pleated Dress',sub:'Sned urringning · Plisserad',price:'649 kr',
     desc:'Klänning med sned krage, plisserade detaljer och asymmetrisk kant. Modern och elegant.',
-    colors:[C.svart,C.vit,C.kamelbrunt,C.rosa,C.vinröd],
+    colors:[
+      {...C.svart,   img:q+'e04f785f-caf3-46b7-ba20-7aea7dc8db2f.jpg'+B},
+      {...C.mörkblå, img:oss+'product/2026/01/29/10/3c085c8b-0933-462f-9e2f-60cf589d20fe.jpg'+B},
+      {...C.ljusblå, img:q+'395b40ca-81ac-433a-87c5-f39028ff606e.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:[q+'8f23b76e-2708-4239-9e71-1c49ae2125ff.jpg'+B,q+'6eb7df92-a909-40d4-a954-d5fba997cfcf.jpg'+B,q+'429edd96-b39f-42e8-8c20-bbe0db90779d.jpg'+B,q+'dc6685f4-06db-440b-aaa1-8710595add78.jpg'+B,q+'e04f785f-caf3-46b7-ba20-7aea7dc8db2f.jpg'+B]
   },
@@ -579,7 +632,10 @@ const PRODUCTS=[
     spu:'CJLY2061360',cat:'klanning',badge:'Favorit',badgeClass:'',
     name:'Multi-layer Maxi Dress',sub:'Maxi · Romantisk · Flerskiktad',price:'899 kr',
     desc:'Flytande maxi-klänning i flera lager med spaghettiband och ryggfri detalj. Perfekt för semester.',
-    colors:[C.marinblå,C.gul],
+    colors:[
+      {...C.marinblå,img:q+'66dca41b-10aa-4b9b-b677-681f4bd8a675.jpg'+B},
+      {...C.gul,     img:q+'a723b702-4f4d-47fa-9235-d4895d12d5ec.jpg'+B},
+    ],
     sizes:['S','M','L','XL'],
     imgs:[q+'66dca41b-10aa-4b9b-b677-681f4bd8a675.jpg'+B,q+'17ba53bd-d35c-4da6-a945-c4f6ac5b2215.jpg'+B,q+'ab91df81-9973-4b59-8003-fb05772536fb.jpg'+B,q+'f6ea6703-67b3-42c9-90ce-d69e3a650a76.jpg'+B,q+'a723b702-4f4d-47fa-9235-d4895d12d5ec.jpg'+B]
   },
@@ -587,7 +643,11 @@ const PRODUCTS=[
     spu:'CJQZ2285588',cat:'kjol',badge:'Nyhet',badgeClass:'new',
     name:'High Waist Pleated Skirt',sub:'Högmidjad · Plisserad',price:'399 kr',
     desc:'Figursmickrande högmidjad plisserad kjol. Tidlös och mångsidig — bär med topp eller blus.',
-    colors:[C.svart,C.vit,C.beige,C.rosa,C.ljusblå,C.vinröd],
+    colors:[
+      {...C.svart,img:q+'c3af8a6a-7816-47a4-a6eb-f41033268415.jpg'+B},
+      {...C.blå,  img:q+'c1f9d62e-8dc9-4ed7-acea-f1fa84d7901d.jpg'+B},
+      {...C.rött, img:q+'069daa49-7d23-40ee-a78f-c6be126f63d5.jpg'+B},
+    ],
     sizes:['XS','S','M','L','XL'],
     imgs:[q+'c3af8a6a-7816-47a4-a6eb-f41033268415.jpg'+B,q+'2cfefe9d-0404-4037-8de1-63393ee1a3f6.jpg'+B,q+'a63890a5-3279-4a2c-8efb-6afa9c49cdc4.jpg'+B,q+'2c45f657-c58e-456e-95b6-c62b56012bf2.jpg'+B,q+'997fe51c-7ea2-4489-b7d2-4af232924356.jpg'+B]
   },
@@ -595,7 +655,10 @@ const PRODUCTS=[
     spu:'CJQZ2055951',cat:'kjol',badge:'',badgeClass:'',
     name:'Sexy Lace Mini Skirt',sub:'Spets · Lågmidjad · Mini',price:'499 kr',
     desc:'Lågmidjad spetskjol med feminin, parisisk känsla. Mångsidig — bär med vit topp eller bodysuit.',
-    colors:[C.svart,C.vit],
+    colors:[
+      {...C.svart,img:q+'c626b948-01fc-44d1-a1cc-366849ee31eb.jpg'+B},
+      {...C.vit,  img:q+'e3438fde-8468-4bae-8f09-bb9f0d75cc36.jpg'+B},
+    ],
     sizes:['XS','S','M','L'],
     imgs:[q+'4d918c16-8b79-46c3-8357-38b54e52c2ed.jpg'+B,q+'c626b948-01fc-44d1-a1cc-366849ee31eb.jpg'+B,q+'e3438fde-8468-4bae-8f09-bb9f0d75cc36.jpg'+B,q+'37da224d-2067-4ee7-907c-4196a742d2ac.jpg'+B]
   }
@@ -616,6 +679,37 @@ function buildGrid(filter='all'){
     card.onclick=()=>openModal(p);
     const badge=p.badge?`<span class="product-badge ${p.badgeClass}">${p.badge}</span>`:'';
     card.innerHTML=`<div class="product-img-wrap"><img src="${p.imgs[0]}" alt="${p.name}" loading="lazy" onerror="this.parentElement.style.background='#E4E0D8'">${badge}<div class="product-quick">Välj storlek</div></div><div class="product-info"><p class="product-name">${p.name}</p><p class="product-sub">${p.sub}</p><p class="product-price">${p.price}</p></div>`;
+    // Main card image element ref
+    const cardImg = card.querySelector('img');
+
+    // Color dot row under price for quick hover preview on card
+    if(p.colors && p.colors.length > 1){
+      const dotRow = document.createElement('div');
+      dotRow.style.cssText='display:flex;gap:5px;margin-top:6px;flex-wrap:wrap';
+      p.colors.forEach(col=>{
+        const dot=document.createElement('div');
+        const isGrad=col.hex.startsWith('linear');
+        dot.style.cssText=`width:12px;height:12px;border-radius:50%;background:${col.hex};cursor:pointer;flex-shrink:0;border:0.5px solid rgba(0,0,0,0.1);transition:transform 0.15s`;
+        dot.title=col.name;
+        if(col.hex==='#F5F2ED'||col.hex==='#F5F0E8') dot.style.border='0.5px solid #C8C0B8';
+        if(col.img){
+          dot.onmouseenter=()=>{
+            cardImg.style.opacity='0.7';
+            setTimeout(()=>{cardImg.src=col.img;cardImg.style.opacity='1';},120);
+            dot.style.transform='scale(1.3)';
+          };
+          dot.onmouseleave=()=>{
+            cardImg.style.opacity='0.7';
+            setTimeout(()=>{cardImg.src=p.imgs[0];cardImg.style.opacity='1';},120);
+            dot.style.transform='scale(1)';
+          };
+          dot.onclick=(e)=>{e.stopPropagation();openModal(p);};
+        }
+        dotRow.appendChild(dot);
+      });
+      card.querySelector('.product-info').appendChild(dotRow);
+    }
+
     grid.appendChild(card);
   });
 }
@@ -646,16 +740,45 @@ function openModal(p){
       s.className='swatch'+(i===0?' active':'');
       const isGradient=col.hex.startsWith('linear');
       s.style.cssText=isGradient?`background:${col.hex};outline:${i===0?'2px solid var(--ink)':'none'};outline-offset:2px`:`background:${col.hex};outline:${i===0?'2px solid var(--ink)':'none'};outline-offset:2px`;
-      if(col.hex==='#F5F2ED')s.style.border='1px solid #D4D0C8';
+      if(col.hex==='#F5F2ED'||col.hex==='#F5F0E8')s.style.border='1px solid #D4D0C8';
       s.title=col.name;
+
+      // Hover: preview color image in main modal image
+      s.onmouseenter=()=>{
+        if(col.img){
+          mi.style.opacity='0.7';
+          setTimeout(()=>{mi.src=col.img;mi.style.opacity='1';},120);
+        }
+      };
+      // Mouse leave: restore active swatch image
+      s.onmouseleave=()=>{
+        const activeSwatch=document.querySelector('.swatch.active');
+        if(activeSwatch&&activeSwatch._img){
+          mi.style.opacity='0.7';
+          setTimeout(()=>{mi.src=activeSwatch._img;mi.style.opacity='1';},120);
+        }
+      };
+
       s.onclick=()=>{
-        document.querySelectorAll('.swatch').forEach(sw=>{sw.style.outline='none'});
+        document.querySelectorAll('.swatch').forEach(sw=>{sw.style.outline='none';sw.classList.remove('active');});
         s.style.outline='2px solid var(--ink)';
         s.style.outlineOffset='2px';
-        colorName.textContent=col.name;
-        document.querySelectorAll('.swatch').forEach(sw=>sw.classList.remove('active'));
         s.classList.add('active');
+        colorName.textContent=col.name;
+        // Switch main image and thumb highlight on click
+        if(col.img){
+          mi.style.opacity='0.6';
+          setTimeout(()=>{mi.src=col.img;mi.style.opacity='1';},150);
+          // Highlight matching thumb
+          document.querySelectorAll('.thumb').forEach(th=>{
+            th.classList.toggle('active', th.querySelector('img')?.src===col.img||th.querySelector('img')?.src.split('?')[0]===col.img.split('?')[0]);
+          });
+        }
       };
+
+      // Store img reference on element for mouseleave restore
+      if(col.img) s._img=col.img;
+
       swatchWrap.appendChild(s);
     });
   } else {
